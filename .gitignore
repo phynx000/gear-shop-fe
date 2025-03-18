@@ -1,0 +1,16 @@
+# Bỏ qua thư mục node_modules
+node_modules/
+*/node_modules/
+
+
+# Bỏ qua file môi trường (chứa thông tin nhạy cảm)
+.env
+
+# Bỏ qua thư mục build (nếu không cần push)
+build/
+
+# Bỏ qua file log
+*.log
+
+# Bỏ qua thư mục .vscode (nếu không muốn push cài đặt VS Code cá nhân)
+.vscode/
