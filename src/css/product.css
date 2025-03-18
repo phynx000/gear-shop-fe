@@ -1,0 +1,149 @@
+body{
+    background-color: whitesmoke;
+}
+
+/* Custom styles */
+/* #productList .col-md-4 {
+    margin-bottom: 30px;
+} */
+#bestSellersCarouselContainer .product-card{
+   /* display: inline-block; */
+   flex-wrap: wrap;
+   padding: 0;
+   padding-left: 15px;
+   padding-right: 15px;
+   padding-top: 10px;
+   padding-bottom: 10px;
+}
+#bestSellersCarouselContainer .product-card img{
+    /* border: 1px solid; */
+    max-height: 150px;
+    width: 100px;
+    float: left;
+
+}
+
+
+
+.product-card {
+    border: 1px solid #aaa;
+    background-color: white;
+    padding: 15px;
+    border-radius: 5px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    position: relative; /* Thêm thuộc tính position: relative để có thể căn chỉnh vị trí tuyệt đối */
+    overflow: hidden;
+    /* transition: all 0.1s ease; */
+}
+
+.product-card img {
+    width: 100%;
+    /* border-radius: 8px; */
+    height: 100%; /* Chiều cao của ảnh sản phẩm */
+    object-fit: cover; /* Đảm bảo ảnh không bị bể */
+}
+
+.product-title {
+    font-weight: bold;
+    margin-top: 10px;
+    font-size: medium;
+}
+.product-price {
+    font-size: 16px;
+    color: #FF5733;
+}
+
+.product-content {
+    flex-grow: 1; /* Phần nội dung chính mở rộng để lấp đầy không gian trống */
+    /* border: 1px dotted red; */
+    /* margin-bottom: 10px; Khoảng cách phía dưới của product-content */
+    justify-content: space-between;
+}
+
+
+.product-price-container {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    /* border: 1px solid black; */
+    /* padding: 10px; Khoảng cách giữa nội dung và viền của product-price-container */
+    /* padding: 10px 0px  10px 0px; */
+}
+
+.product-discount {
+    font-size: 14px;
+    color: #aaa;
+    text-decoration: line-through;
+    /* margin-left: 10px; Khoảng cách giữa giá gốc và giá khuyến mãi */
+}
+
+.product-actions {
+    /* margin-top: 10px; */
+    display: flex;
+    justify-content: center; /* Canh chỉnh các phần tử con vào 2 bên */
+    align-items: center; /* Căn chỉnh các phần tử con theo chiều dọc */
+}
+
+.btn-discount {
+    background-color: pink;
+    padding: 5px 10px;
+    border-bottom-left-radius: 15px;
+    font-size: 12px;
+    color: #FF5733;
+    font-weight: bold;
+    /* border: 1px solid red; */
+    position: absolute;
+    top: 0px; /* Để nút cách top của .product-card 10px */
+    right: 0px; /* Để nút cách right của .product-card 10px */
+}
+
+.product-card:hover{
+    border-color: #FF5733;
+}
+.product-card img:hover{
+    transform: scale(1.1);
+}
+.carouselItem{
+    transition: 1.2s ease;
+    scroll-behavior: smooth;
+}
+
+
+/* CSS for image zoom effect */
+.zoomImg {
+    transition: all 0.3s ease-in-out;
+    overflow: hidden;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+}
+.zoomImg img{
+    max-height: 300px;
+    object-fit: contain;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    /* border: 1px solid red; */
+   
+}
+
+.zoomImg img:hover {
+    transform: scale(1.2); /* Increase scale to 1.2 when hovering */
+}
+
+#productModalLabel{
+    font-size: 32px;
+    padding: 0px;
+    color: #e8bd72;
+}
+
+.btn-buy-now{
+    /* background-color: #FF5733; */
+    width: auto;
+}
+.btn-add-to-cart{
+    /* background-color: #e8bd72; */
+    width: auto;
+}

@@ -1,0 +1,599 @@
+.App {
+  text-align: center;
+}
+
+@font-face {
+  font-family: 'FontAwesome';
+  src: url('../src/webfonts/fa-brands-400.woff2') format('woff2'),
+    url('../src/webfonts/fa-brands-400.ttf') format('truetype');
+}
+
+/* Thêm vào index.css hoặc App.css */
+@import "~slick-carousel/slick/slick.css";
+@import "~slick-carousel/slick/slick-theme.css";
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+a{
+  text-decoration: none;
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.category-aside {
+  background: #f8f9fa;
+  height: 100%;
+  overflow-y: scroll;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.category-aside h2 {
+  font-size: 1.5em;
+  margin-bottom: 15px;
+}
+
+.category-aside ul {
+  list-style: none;
+  padding: 0;
+}
+
+.category-aside ul li {
+  margin-bottom: 10px;
+}
+
+.category-aside ul li a {
+  text-decoration: none;
+  color: #007bff;
+  font-weight: bold;
+}
+
+.category-aside ul li a:hover {
+  text-decoration: underline;
+}
+
+.homepage-layout {
+  display: flex;
+  gap: 20px;
+}
+
+.carousel {
+  width: 100%;
+}
+
+.carousel {
+  position: relative;
+  width: 100%;
+  max-width: 100%;
+  margin: auto;
+  overflow: hidden;
+  height: 609px;
+}
+
+.carousel-images {
+  position: relative;
+  display: flex;
+  height: 100%;
+  /* Chiều cao của carousel */
+}
+
+.carousel-image {
+  min-width: 100%;
+  transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.carousel-image.active {
+  opacity: 1;
+  position: relative;
+}
+
+.carousel-indicators {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 8px;
+}
+
+.indicator {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.5);
+  border: none;
+  cursor: pointer;
+}
+
+.indicator.active {
+  background-color: white;
+}
+
+
+.product-detail {
+  margin-top: 20px;
+}
+
+.product-title {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.price {
+  font-size: 20px;
+  color: #e63946;
+}
+
+.old-price {
+  text-decoration: line-through;
+  color: gray;
+  margin-left: 10px;
+}
+
+.discount {
+  color: #e63946;
+  font-weight: bold;
+  margin-left: 10px;
+}
+
+.promotion {
+  margin-top: 15px;
+  
+}
+.promotion_heading{
+  display: flex;
+  color: #e63946;
+  align-self: flex-start;
+}
+.promotion_desc{
+  display: flex;
+  align-self: flex-start;
+}
+
+.features {
+  margin-top: 20px;
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
+}
+.features p{
+  align-self: flex-start;
+}
+.product-info table {
+  margin-top: 20px;
+}
+
+.related-products .product-card {
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 10px;
+  text-align: center;
+}
+
+.related-products .product-card h5 {
+  font-size: 18px;
+  margin: 10px 0;
+}
+
+.related-products .product-card .price {
+  color: #e63946;
+  font-weight: bold;
+}
+
+
+/* Căn giữa toàn bộ màn hình */
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: #f4f6f9;
+  /* Màu nền nhạt */
+  padding: 20px;
+}
+
+/* Hộp đăng nhập */
+.login-box {
+  background: white;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  max-width: 400px;
+  width: 100%;
+  text-align: center;
+}
+
+/* Tiêu đề */
+.login-title {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+/* Form nhóm */
+.form-group {
+  margin-bottom: 15px;
+  text-align: left;
+}
+
+.form-group label {
+  font-size: 14px;
+  font-weight: bold;
+  color: #555;
+}
+
+.form-control {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 14px;
+}
+
+/* Remember Me */
+.remember-me {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  font-size: 14px;
+  margin-bottom: 15px;
+}
+
+/* Nút bấm */
+.btn {
+  padding: 10px 15px;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.btn-primary {
+  background-color: #007bff;
+  color: white;
+  width: 100%;
+}
+
+.btn-facebook {
+  background-color: #3b5998;
+  color: white;
+  margin-bottom: 10px;
+  width: 100%;
+}
+
+.btn-google {
+  background-color: #dd4b39;
+  color: white;
+  width: 100%;
+}
+
+/* Social Login */
+.social-login p {
+  margin: 15px 0;
+  color: #777;
+}
+
+/* Liên kết dưới form */
+.links {
+  margin-top: 15px;
+}
+
+.links a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.links a:hover {
+  text-decoration: underline;
+}
+
+
+/* General header styles */
+.main-header {
+  background-color: #3c8dbc;
+  color: white;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.main-header .logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 50px;
+  color: white;
+  font-size: 18px;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.main-header .logo-mini {
+  font-size: 14px;
+}
+
+.main-header .logo-lg {
+  font-size: 20px;
+  font-weight: 700;
+}
+
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 20px;
+}
+
+.navbar .sidebar-toggle {
+  color: white;
+  font-size: 20px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+
+.navbar .sidebar-toggle:hover {
+  background: rgba(0, 0, 0, 0.1);
+}
+
+/* Navbar custom menu */
+.navbar-custom-menu {
+  display: flex;
+  align-items: center;
+}
+
+.navbar-custom-menu .nav>li {
+  position: relative;
+}
+
+.navbar-custom-menu .nav>li>a {
+  color: white;
+  padding: 10px;
+  text-decoration: none;
+}
+
+.navbar-custom-menu .nav>li>a:hover {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 5px;
+}
+
+/* Dropdown menus */
+.dropdown-menu {
+  background-color: white;
+  border: 1px solid #ddd;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  margin-top: 10px;
+  border-radius: 4px;
+  overflow: hidden;
+  z-index: 1000;
+}
+
+.dropdown-menu .menu>li>a {
+  color: #333;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  border-bottom: 1px solid #eee;
+}
+
+.dropdown-menu .menu>li>a:hover {
+  background-color: #f5f5f5;
+}
+
+.dropdown-menu .menu .user-header {
+  text-align: center;
+  padding: 15px;
+  background-color: #f7f7f7;
+  border-bottom: 1px solid #ddd;
+}
+
+.dropdown-menu .menu .user-header img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  margin-bottom: 10px;
+}
+
+.dropdown-menu .user-footer {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+}
+
+/* Notifications and Tasks */
+.navbar-custom-menu .label {
+  font-size: 12px;
+  padding: 3px 5px;
+  border-radius: 10px;
+  margin-left: 5px;
+  background-color: #f39c12;
+  color: white;
+}
+
+.navbar-custom-menu .fa {
+  font-size: 16px;
+}
+
+/* Progress bar */
+.progress-bar {
+  background-color: #00c0ef;
+  height: 8px;
+}
+
+.progress-bar-aqua {
+  background-color: #00a65a;
+}
+
+.progress {
+  background-color: #ddd;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+/* User image */
+.user-image {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  margin-right: 5px;
+}
+
+
+/* Sidebar chung */
+.main-sidebar {
+  background-color: #3c8dbc;
+  color: #ecf0f1;
+  height: 100%;
+  width: 280px;
+  position: fixed;
+  top: 80px;
+  left: 0;
+  padding-top: 20px;
+  transition: width 0.3s ease;
+}
+
+.main-sidebar:hover {
+  width: 290px;
+}
+
+.sidebar {
+  padding: 10px;
+}
+
+.user-panel {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.user-panel .image {
+  margin-right: 10px;
+}
+
+.user-panel img {
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+}
+
+.user-panel .info {
+  font-size: 14px;
+}
+
+.user-panel .info p {
+  margin: 0;
+  font-weight: bold;
+}
+
+.user-panel .info a {
+  color: #27ae60;
+  font-size: 12px;
+}
+
+.sidebar-form {
+  margin-bottom: 20px;
+}
+
+.sidebar-form .input-group {
+  display: flex;
+}
+
+.sidebar-form .form-control {
+  background-color: #34495e;
+  color: #ecf0f1;
+  border: none;
+  padding: 8px;
+  border-radius: 3px;
+}
+
+.sidebar-form .btn {
+  background-color: #1abc9c;
+  color: white;
+  border: none;
+  padding: 8px;
+  border-radius: 3px;
+}
+
+.sidebar-menu {
+  list-style-type: none;
+  padding: 0;
+}
+
+.sidebar-menu li {
+  margin-bottom: 10px;
+  list-style: none;
+   
+}
+
+.sidebar-menu li a {
+  color: #ecf0f1;
+  text-decoration: none;
+  font-size: 16px;
+  display: flex;
+  padding:  10px;
+  align-items: center;
+}
+
+.sidebar-menu li a i {
+  margin-right: 10px;
+}
+
+.sidebar-menu li a:hover {
+  background-color: #34495e;
+  border-radius: 4px;
+  /* padding: 8px; */
+}
+
+.treeview-menu {
+  padding-left: 20px;
+}
+
+.treeview-menu li a {
+  font-size: 14px;
+}
+
+.treeview-menu li a:hover {
+  background-color: #16a085;
+}
+
+/* Thêm hiệu ứng hover cho các menu con */
+.sidebar-menu .treeview:hover>a {
+  background-color: #1abc9c;
+  color: white;
+}
