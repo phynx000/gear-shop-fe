@@ -2,16 +2,12 @@
 
 import React from "react";
 import useCategories from "../hooks/useCategory";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 
 
+ 
 const CategoryAside = () => {
-
     const { categories, loading, error, currentCategory, handleCategoryChange } = useCategories();
-    useEffect(() => {
-        console.log("CategoryAside mounted");
-        return () => console.log("CategoryAside unmounted");
-    }, []);
 
     return (
         <aside className="category-aside">
@@ -35,6 +31,7 @@ const CategoryAside = () => {
                     ))
                 )}
             </div>
+
         </aside>
     );
 };

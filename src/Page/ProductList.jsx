@@ -2,9 +2,11 @@
 import React, { useState, useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import ProductItem from "../components/ProductItem";
+import ProductFilters from "../components/filterBar/FilterBar";
 import useCategories from "../hooks/useCategory";
 import { getProducts, getProductsByCategory } from "../services/product_service";
 import CategoryAside from "../components/CategoryAside";
+
 
 const ProductList = () => {
     const { currentCategory, handleCategoryChange } = useCategories();
@@ -55,6 +57,11 @@ const ProductList = () => {
                 </div>
             </div>
             <div className="col-md-9 col-sm-12">
+
+                {/* HÀNG CHỨA BỘ LỌC */}
+    <div className="row mb-3 p-3 bg-light border rounded">
+            <ProductFilters />
+            </div>
                 <div id="productList" className="row">
                     {loading ? (
                         <div className="text-center w-100">

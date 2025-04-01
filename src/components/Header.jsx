@@ -31,6 +31,7 @@ const Header = () => {
     const handleLogout = async () => {
         try {
             const refreshToken = localStorage.getItem("refreshToken");
+            // console.log("refreshToken :",refreshToken)
             if (!refreshToken) {
                 console.warn("Không tìm thấy refresh token.");
                 return;
@@ -39,11 +40,10 @@ const Header = () => {
             await axios.post("http://localhost:8000/api/logout/", 
                 { refresh: refreshToken }, 
                 {
-                    headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
-                    withCredentials: true
-                }
+                    headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },      
+                } 
             );
-    
+            
             // Xóa dữ liệu sau khi đăng xuất
             localStorage.removeItem("token");
             localStorage.removeItem("refreshToken");
@@ -57,6 +57,14 @@ const Header = () => {
             window.location.reload();
         } catch (error) {
             console.error("Lỗi khi đăng xuất:", error);
+
+              // Kiểm tra nếu có phản hồi từ server
+              if (error.response) {
+                console.error("Phản hồi từ server:", error.response.data);
+                alert(`Lỗi từ server: ${error.response.data.detail || "Không xác định"}`);
+            } else {
+                alert("Lỗi kết nối đến server.");
+            }
         }
     };
 
